@@ -61,7 +61,7 @@ class ChartDataRepository
 
     public function dau_add()
     {
-        $title = 'Brave Browser DAU Net Addition (M)';
+        $title = 'Brave Browser DAU Monthly Addition (M)';
         $data = array_filter(BraveUsage::all(), function ($item) {
             return isset($item['dau']);
         });
@@ -77,7 +77,7 @@ class ChartDataRepository
 
     public function mau_add()
     {
-        $title = 'Brave Browser MAU Net Addition (M)';
+        $title = 'Brave Browser MAU Monthly Addition (M)';
         $data = array_filter(BraveUsage::all(), function ($item) {
             return isset($item['mau']);
         });
@@ -93,7 +93,7 @@ class ChartDataRepository
 
     public function mau_growth()
     {
-        $title = 'Brave Browser MAU Browth (%)';
+        $title = 'Brave Browser MAU Monthly Growth (%)';
         $data = array_filter(BraveUsage::all(), function ($item) {
             return isset($item['mau']);
         });
@@ -109,7 +109,7 @@ class ChartDataRepository
 
     public function dau_growth()
     {
-        $title = 'Brave Browser DAU Browth (%)';
+        $title = 'Brave Browser DAU Monthly Growth (%)';
         $data = array_filter(BraveUsage::all(), function ($item) {
             return isset($item['dau']);
         });

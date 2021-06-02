@@ -14,6 +14,27 @@
             <toggleable-line-chart url="/charts/mau" title="Brave Browser MAU (M)" :toggleable="false">
             </toggleable-line-chart>
         </div>
+        <div>
+            <toggleable-line-chart url="/charts/dau_add" title="Brave Browser DAU Monthly Addition (M)"
+                :toggleable="false">
+            </toggleable-line-chart>
+        </div>
+        <div>
+            <toggleable-line-chart url="/charts/mau_add" title="Brave Browser MAU Monthly Addition (M)"
+                :toggleable="false">
+            </toggleable-line-chart>
+        </div>
+        <div>
+            <toggleable-line-chart url="/charts/dau_growth" title="Brave Browser DAU Monthly Growth (%)"
+                :toggleable="false">
+            </toggleable-line-chart>
+        </div>
+        <div>
+            <toggleable-line-chart url="/charts/mau_growth" title="Brave Browser MAU Monthly Growth (%)"
+                :toggleable="false">
+            </toggleable-line-chart>
+        </div>
+
     </div>
     <h1 class="py-2 text-2xl font-semibold">Data</h1>
     <table class="w-full">
