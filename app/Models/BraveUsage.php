@@ -9,6 +9,12 @@ class BraveUsage
 
         return [
             [
+                'month' => '2021-05',
+                'dau' => 11300000,
+                'mau' => 32400000,
+                'source' => 'https://brave.com/transparency/',
+            ],
+            [
                 'month' => '2021-04',
                 'dau' => 10600000,
                 'mau' => 30000000,
