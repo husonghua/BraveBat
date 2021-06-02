@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Route;
 // Chart APIs
 Route::any('/dau', [ChartDataController::class, 'dau'])->name('charts.dau');
 Route::any('/mau', [ChartDataController::class, 'mau'])->name('charts.mau');
+Route::any('/dau_add', [ChartDataController::class, 'dau_add'])->name('charts.dau_add');
+Route::any('/mau_add', [ChartDataController::class, 'mau_add'])->name('charts.mau_add');
+Route::any('/dau_growth', [ChartDataController::class, 'dau_growth'])->name('charts.dau_growth');
+Route::any('/mau_growth', [ChartDataController::class, 'mau_growth'])->name('charts.mau_growth');
+
 Route::any('/bat_purchases', [ChartDataController::class, 'bat_purchases'])->name('charts.bat_purchases');
 Route::any('/bat_purchases_in_dollars', [ChartDataController::class, 'bat_purchases_in_dollars'])->name('charts.bat_purchases_in_dollars');
 Route::any('/ad_campaign_supported_countries', [ChartDataController::class, 'ad_campaign_supported_countries'])->name('charts.add_campaign_supported_countries');

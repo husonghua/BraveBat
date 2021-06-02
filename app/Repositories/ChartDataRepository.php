@@ -37,6 +37,92 @@ class ChartDataRepository
         ];
     }
 
+    public function net_add(array $data, string $element)
+    {
+        $current = collect($data)->map(fn($item) => $item[$element]);
+        $base = collect($data)->map(fn($item) => $item[$element]);
+        $current->pop();
+        $base->shift();
+        return $current->map(function ($item, $index) use ($base) {
+            return round((($item - $base[$index]) / 1000000), 1);
+        });
+    }
+
+    public function net_growth(array $data, string $element)
+    {
+        $current = collect($data)->map(fn($item) => $item[$element]);
+        $base = collect($data)->map(fn($item) => $item[$element]);
+        $current->pop();
+        $base->shift();
+        return $current->map(function ($item, $index) use ($base) {
+            return round((($item / $base[$index]) - 1) * 100, 1);
+        });
+    }
+
+    public function dau_add()
+    {
+        $title = 'Brave Browser DAU Net Addition (M)';
+        $data = array_filter(BraveUsage::all(), function ($item) {
+            return isset($item['dau']);
+        });
+        $labels = collect($data)->map(fn($item) => $item['month']);
+        $labels->pop();
+        return [
+            'labels' => $labels,
+            'data' => [
+                $title => $this->net_add($data, 'dau'),
+            ],
+        ];
+    }
+
+    public function mau_add()
+    {
+        $title = 'Brave Browser MAU Net Addition (M)';
+        $data = array_filter(BraveUsage::all(), function ($item) {
+            return isset($item['mau']);
+        });
+        $labels = collect($data)->map(fn($item) => $item['month']);
+        $labels->pop();
+        return [
+            'labels' => $labels,
+            'data' => [
+                $title => $this->net_add($data, 'mau'),
+            ],
+        ];
+    }
+
+    public function mau_growth()
+    {
+        $title = 'Brave Browser MAU Browth (%)';
+        $data = array_filter(BraveUsage::all(), function ($item) {
+            return isset($item['mau']);
+        });
+        $labels = collect($data)->map(fn($item) => $item['month']);
+        $labels->pop();
+        return [
+            'labels' => $labels,
+            'data' => [
+                $title => $this->net_growth($data, 'mau'),
+            ],
+        ];
+    }
+
+    public function dau_growth()
+    {
+        $title = 'Brave Browser DAU Browth (%)';
+        $data = array_filter(BraveUsage::all(), function ($item) {
+            return isset($item['dau']);
+        });
+        $labels = collect($data)->map(fn($item) => $item['month']);
+        $labels->pop();
+        return [
+            'labels' => $labels,
+            'data' => [
+                $title => $this->net_growth($data, 'dau'),
+            ],
+        ];
+    }
+
     public function bat_purchases()
     {
         $title = 'Brave-Initiated BAT Purchase';

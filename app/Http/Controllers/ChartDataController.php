@@ -28,6 +28,34 @@ class ChartDataController extends Controller
         });
     }
 
+    public function dau_add()
+    {
+        return cache()->remember('dau_add', 86400, function () {
+            return $this->chartDataRepository->dau_add();
+        });
+    }
+
+    public function mau_add()
+    {
+        return cache()->remember('mau_add', 86400, function () {
+            return $this->chartDataRepository->mau_add();
+        });
+    }
+
+    public function dau_growth()
+    {
+        return cache()->remember('dau_growth', 86400, function () {
+            return $this->chartDataRepository->dau_growth();
+        });
+    }
+
+    public function mau_growth()
+    {
+        return cache()->remember('mau_growth', 86400, function () {
+            return $this->chartDataRepository->mau_growth();
+        });
+    }
+
     public function bat_purchases()
     {
         return cache()->remember('bat_purchases', 86400, function () {
