@@ -12,7 +12,7 @@ class BraveUsage
                 'month' => '2021-05',
                 'dau' => 11300000,
                 'mau' => 32400000,
-                'source' => 'https://brave.com/transparency/',
+                'source' => 'https://twitter.com/BrendanEich/status/1400129061872091139',
             ],
             [
                 'month' => '2021-04',
