@@ -30,7 +30,7 @@
     "league/flysystem-aws-s3-v3": "^1.0",
     "m1guelpf/laravel-fun": "^1.2",
     "maxbanton/cwh": "^2.0",
-    "meilisearch/meilisearch-php": "^0.17.0",
+    "meilisearch/meilisearch-php": "^0.18.0",
     "nesk/puphpeteer": "^2.0",
     "paquettg/php-html-parser": "^3.0",
     "predis/predis": "^1.1",
