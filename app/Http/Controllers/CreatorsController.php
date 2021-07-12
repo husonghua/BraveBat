@@ -16,6 +16,9 @@ class CreatorsController extends Controller
 
     public function show($channel, $id)
     {
+        if ($channel === 'reddit') {
+            return redirect()->route('welcome');
+        }
         $creator = Creator::where('id', $id)
             ->where('channel', $channel)
             ->firstOrFail();
